@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bitcoin Mnemonic Balance Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="container">
+    <h1>Bitcoin Mnemonic Balance Checker</h1>
+    <p class="subtle">Generate a random 12-word BIP39 mnemonic, derive a Bitcoin address, and check its balance via BlockCypher.</p>
+
+    <section class="card">
+      <div class="controls">
+        <button id="generateBtn">Generate random mnemonic</button>
+        <div class="inline">
+          <label for="bcToken">BlockCypher token (optional)</label>
+          <input id="bcToken" type="text" placeholder="Paste token if you have one" />
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="field">
+          <div class="label">Mnemonic (12 words)</div>
+          <pre id="mnemonic" class="code"></pre>
+        </div>
+
+        <div class="field">
+          <div class="label">Derivation path</div>
+          <pre id="path" class="code">m/44'/0'/0'/0/0</pre>
+        </div>
+
+        <div class="field">
+          <div class="label">Bitcoin address (P2PKH)</div>
+          <pre id="address" class="code"></pre>
+        </div>
+
+        <div class="field">
+          <div class="label">Balance</div>
+          <pre id="balance" class="code"></pre>
+        </div>
+
+        <div id="status" class="status"></div>
+      </div>
+    </section>
+
+    <section class="note">
+      <p><strong>Important:</strong> This app is for educational use. Do not use mnemonics generated here to store real funds. Anyone with access to the mnemonic can control the wallet.</p>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
