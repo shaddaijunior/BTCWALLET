@@ -4,7 +4,7 @@ import * as bip32 from "https://cdn.jsdelivr.net/npm/bip32@4.0.0/+esm";
 import * as ecc from "https://cdn.jsdelivr.net/npm/tiny-secp256k1@2.2.1/+esm";
 import * as bitcoin from "https://cdn.jsdelivr.net/npm/bitcoinjs-lib@6.1.5/+esm";
 
-bitcoin.initEccLib(ecc);
+bitcoin.initEccLib(ecc); // must be called before using bip32
 
 const generateBtn = document.getElementById("generateBtn");
 const mnemonicEl = document.getElementById("mnemonic");
